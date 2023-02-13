@@ -1,16 +1,17 @@
-const bookTitle = document.getElementById('bookTitle');
-const bookAuthor = document.getElementById('bookAuthor');
-const addBook = document.getElementById('addBook');
+// ─── Selectors ───────────────────────────────────────────────────────────────
+
+const bookTitle = document.querySelector('#bookTitle');
+const bookAuthor = document.querySelector('#bookAuthor');
+const addBook = document.querySelector('#addBook');
 
 
-// const form = document.getElementById('form');
+// ─── Functions ───────────────────────────────────────────────────────────────
 
-// form.addEventListener('submit', (e)=>{
-//     e.preventDefault();
-//     console.log(bookTitle.value);
-// })
+function addingBook() {
+    console.log(bookTitle.value);
+}
 
 
-addBook.addEventListener('click', ()=>{
-    alert(bookTitle.value);
-})
+// ─── Listerners ──────────────────────────────────────────────────────────────
+
+addBook.addEventListener('click', addingBook);
