@@ -8,25 +8,42 @@ const infoContainer = document.querySelector('.container');
 // ─── Functions ───────────────────────────────────────────────────────────────
 
 const bookCollection = [
-    {title: '', author: ''},
+    { title: '', author: '' },
 ]
 
 
 function addingBook() {
+
     const p1 = document.createElement('p');
-    p1.setAttribute('id', 'booktitle');
     const p2 = document.createElement('p');
-    p2.setAttribute('id', 'bookauthor');
-     for(let i = 0; i < bookCollection.length; i += 1){
+    const line = document.createElement('hr');
+    const removeBtn = document.createElement('button');
+
+    for (let i = 0; i < bookCollection.length; i += 1) {
         bookCollection[i].title = bookTitle.value;
-        p1.textContent = bookCollection[i].title;
+
         bookCollection[i].author = bookAuthor.value;
-        p2.textContent = bookCollection[i].author;
-     }
-    infoContainer.append(p1,p2);
+        createBook(bookCollection[i].title, bookCollection[i].author)
+
+
+    }
+
+    infoContainer.append(p1, p2, removeBtn, line);
     bookAuthor.value = '';
     bookTitle.value = '';
+
+    function createBook(title, author) {
+
+        p1.setAttribute('id', 'booktitle');
+        p2.setAttribute('id', 'bookauthor');
+        p1.textContent = title;
+        p2.textContent = author;
+        removeBtn.textContent = 'Remove';
+    }
 }
+
+
+
 
 
 // ─── Listerners ──────────────────────────────────────────────────────────────
