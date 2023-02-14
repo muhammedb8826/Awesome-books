@@ -6,19 +6,22 @@ const lists = document.querySelector('.lists');
 
 // ─── Functions ───────────────────────────────────────────────────────────────
 
-const bookCollection = [];
+let bookCollection = [];
 
 function removeBooks() {
   const el = document.querySelector(`.${this.id}`);
+  const rem = this.id;
+  const index = rem.replace('btn-', '');
+  const span = document.createElement('span');
+  span.textContent = `element with this ${parseInt(index, 10)} id removed`;
+  span.style.display = 'none';
+  bookCollection.splice(index, 1);
+  localStorage.setItem('bookCollection', JSON.stringify(bookCollection));
   el.remove();
 }
 
-function createBook() {
-  let listOfBooks = [];
-
-  if (localStorage.getItem('bookCollection') !== null) {
-    listOfBooks = JSON.parse(localStorage.getItem('bookCollection'));
-  }
+function createBook(item) {
+  bookCollection = JSON.parse(localStorage.getItem('bookCollection'));
   const wrapper = document.createElement('div');
   const p1 = document.createElement('p');
   const p2 = document.createElement('p');
@@ -28,12 +31,10 @@ function createBook() {
   p1.setAttribute('id', 'booktitle');
   p2.setAttribute('id', 'bookauthor');
   removeBtn.textContent = 'Remove';
-  for (let i = 0; i < listOfBooks.length; i += 1) {
-    p1.textContent = listOfBooks[i].title;
-    p2.textContent = listOfBooks[i].author;
-    wrapper.className = `btn-${i}`;
-    removeBtn.setAttribute('id', `btn-${i}`);
-  }
+  p1.textContent = bookCollection[item].title;
+  p2.textContent = bookCollection[item].author;
+  wrapper.className = `btn-${item}`;
+  removeBtn.setAttribute('id', `btn-${item}`);
   wrapper.append(p1, p2, removeBtn, line);
   removeBtn.addEventListener('click', removeBooks);
 
@@ -45,16 +46,24 @@ function addingBook() {
   book.title = bookTitle.value;
   book.author = bookAuthor.value;
   bookCollection.push(book);
-  if (localStorage.getItem('bookCollection') === null) {
-    localStorage.setItem('bookCollection', '[]');
-  }
 
   localStorage.setItem('bookCollection', JSON.stringify(bookCollection));
   bookAuthor.value = '';
   bookTitle.value = '';
-  createBook();
+  if (localStorage.getItem('bookCollection') !== null) {
+    createBook((bookCollection.length - 1));
+  }
 }
 
 // ─── Listerners ──────────────────────────────────────────────────────────────
 
 addBook.addEventListener('click', addingBook);
+
+window.onload = () => {
+  if (localStorage.getItem('bookCollection') !== null) {
+    bookCollection = JSON.parse(localStorage.getItem('bookCollection'));
+    for (let i = 0; i < bookCollection.length; i += 1) {
+      createBook(i);
+    }
+  }
+};
