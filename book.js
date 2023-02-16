@@ -17,9 +17,6 @@ class Books {
       getFromLocalStorage() { 
            const cachedBooks = window.localStorage.getItem(this.storageName);    return cachedBooks ? JSON.parse(cachedBooks) : [];  
           }
-
-
-
   getBooksFromLocalStorage() {
       if (localStorage.storageName) {
           return JSON.parse(getBooks);
@@ -38,21 +35,20 @@ class Books {
   removeBook(item) {
       this.bookCollection = this.bookCollection.filter((book, index) => item !== index);
   }
-  showAllBooks() {
-      this.list.innerHTML =
-      `<div class="books">
-      <p>Book1</p>
-      <button class="remove">Remove</button>
-      `
-  
-  }
 
-  showAllBooks() {    this.list.innerHTML = this.bookCollection.map((book) => `<div class="books"><p id="title">"${book.title}" by ${book.author}</p><button class="remove">Remove</button></div>`,).join('');
-  const remove = Array.from(document.getElementsByClassName('remove'));    
-  this.showAllBooks(); 
+  showAllBooks() {    
+    this.list.innerHTML = this.bookCollection.map((book) => `<div class="books"><p id="title">"${book.title}" by ${book.author}</p><button class="remove">Remove</button></div>`).join('');
+  const deleteBtn = document.querySelectorAll('.remove');
+  for(let i = 0; i < deleteBtn.length; i += 1) {
+    deleteBtn[i].addEventListener('click', () => {
+      this.removeBook(i);
+      this.saveBookToLocalStorage();
+      this.showAllBooks();
+    })
+  }  
 }
 }
 window.onload = () => {
   const mybook = new Books();
   mybook.showAllBooks();
-}
+};
