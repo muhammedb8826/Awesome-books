@@ -4,7 +4,7 @@ class Books {
             this.bookTitle = document.querySelector('#bookTitle');
             this.bookAuthor = document.querySelector('#bookAuthor');
             this.addBookBtn = document.querySelector('#addBook');
-            this.bookCollection = this.getFromLocalStorage();
+            this.bookCollection = this.getBookFromLocalStorage();
             this.list = document.querySelector('.list');
             this.addBookBtn.addEventListener('click', () => {
                 this.addBook();
@@ -14,9 +14,12 @@ class Books {
             });
         }
         // eslint-disable-next-line consistent-return
-    getFromLocalStorage() {
-        const cachedBooks = window.localStorage.getItem(this.storageName);
-        return cachedBooks ? JSON.parse(cachedBooks) : [];
+    getBookFromLocalStorage() {
+        const storedBooks = window.localStorage.getItem(this.storageName);
+        if (storedBooks) {
+            return JSON.parse(storedBooks);
+        }
+        return [];
     }
 
     addBook() {
@@ -33,7 +36,10 @@ class Books {
     }
 
     showAllBooks() {
-        this.list.innerHTML = this.bookCollection.map((book) => `<div class="books"><p id="title">"${book.title}" by ${book.author}</p><button class="remove">Remove</button></div>`).join('');
+        this.list.innerHTML = this.bookCollection.map((book) => `<div class="books">
+        <p id="title">"${book.title}" by ${book.author}</p>
+        <button class="remove">Remove</button></div>`).join('');
+
         const deleteBtn = document.querySelectorAll('.remove');
         for (let i = 0; i < deleteBtn.length; i += 1) {
             deleteBtn[i].addEventListener('click', () => {
