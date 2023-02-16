@@ -1,57 +1,53 @@
 body {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .list {
-    border: 2px solid #000;
-    padding: 5px;
-    width: 70%;
+  border: 2px solid #000;
+  padding: 5px;
+  width: 70%;
 }
 
 .list :nth-child(even) {
-    background-color: #eee;
+  background-color: #eee;
 }
 
 .books {
-    display: flex;
-    justify-content: space-between;
-    margin: 6px 0;
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 0;
 }
 
 .remove {
-    background-color: rgb(237, 137, 137) !important;
-    color: white;
-    box-shadow: 50px 80px 90px rgba(0, 0, 0, 0);
+  background-color: rgb(237, 137, 137) !important;
+  color: white;
+  box-shadow: 50px 80px 90px rgba(0, 0, 0, 0);
 }
 
 .forms {
-    width: 50%;
+  width: 50%;
 }
 
 input[type=text] {
-    border: none;
-    outline: none;
-    width: 100%;
-    padding: 15px;
-    border-radius: 5px;
-    border: 1px solid purple;
+  outline: none;
+  width: 100%;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid purple;
 }
 
 #addBook {
-    float: right;
-    border: none;
-    outline: none;
-    padding: 15px;
-    border-radius: 5px;
-    border: 1px solid purple;
-    ;
+  float: right;
+  outline: none;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid purple;
 }
