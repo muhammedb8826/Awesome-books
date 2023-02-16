@@ -18,9 +18,7 @@ class Book {
     }
 
     addBook() {
-        const book = { title: '', author: '' };
-        book.title = bookTitle.value;
-        book.author = bookAuthor.value;
+        const book = { title: bookTitle.value, author: bookAuthor.value }
         this.bookCollection.push(book);
         bookAuthor.value = '';
         bookTitle.value = '';
