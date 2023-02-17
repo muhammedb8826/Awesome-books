@@ -11,25 +11,65 @@
 
 <body>
 
-    <section class="container">
-        <h1>Awesome Books</h1>
-        <div class="list"> </div>
+    <header class="header">
+        <nav class="navbar">
+            <h1 class="logo"><a href="#">Awesome <span>Books</span></a></h1>
+            <ul>
+                <li class="nav-links">
+                    <a href="#" class="nav-item" id="listLink">List</a>
+                </li>
+                <li class="nav-links">
+                    <a href="#" class="nav-item" id="addBookLink">Add new</a>
+                </li>
+                <li class="nav-links">
+                    <a href="#" class="nav-item" id="contactLink">Contact</a>
+                </li>
+            </ul>
+        </nav>
 
-        <h1>Add a new Book</h1>
+        <div class="time"></div>
+    </header>
 
-        <div class="forms">
-            <!-- <form action="#" id="form"> -->
-            <input type="text" name="book-title" id="bookTitle" placeholder="title">
-            <br><br>
-            <input type="text" name="author" id="bookAuthor" placeholder="author">
-            <br><br>
-            <button type="submit" id="addBook">Add</button>
-            <!-- </form> -->
-        </div>
+    <main class="container">
 
-    </section>
+        <section id="bookCollections" class="book-collections">
+            <h1 class="heading">All Awesome Books</h1>
+            <div class="list"></div>
+        </section>
 
+        <section id="AddBooks" class="add-book">
+
+            <h1 class="heading">Add a new Book</h1>
+
+            <div class="forms">
+                <input type="text" name="book-title" id="bookTitle" placeholder="title">
+                <br><br>
+                <input type="text" name="author" id="bookAuthor" placeholder="author">
+                <br><br>
+                <button type="submit" id="addBook">Add</button>
+            </div>
+        </section>
+
+        <section id="contactInfo" class="contact-info">
+            <h1 class="heading">Contact information</h1>
+            <p>
+                Do you have any questions, or jus want to say "Hello"? <br> You can reach out to us!
+            </p>
+            <address>
+                <ul class="contact-list">
+                    <li class="email">Our e-mail: mail@mail.com</li>
+                    <li class="phone">Our phone number: 005554443210</li>
+                    <li class="address">
+                    Our address: Streetname 22, 87654 City, County
+                    </li>
+                </ul>
+            </address>
+        </section>
+
+    </main>
+    <footer>Copyright</footer>
     <script src="./book.js"></script>
+    <script src="./navigation.js"></script>
 </body>
 
 </html>
