@@ -1,183 +1,184 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
 }
 
 body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    font-weight: normal;
-    overflow: hidden;
-    background-image: url('/images/book.jpg');
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-weight: normal;
+  overflow: hidden;
+  background-image: url('/images/book.jpg');
 }
 
 .header {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 1rem 2rem;
-    border: 2px solid purple;
-    background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem 2rem;
+  border: 2px solid purple;
+  background-color: #fff;
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo a {
-    font-weight: 600;
-    text-decoration: none;
-    color: purple;
+  font-weight: 600;
+  text-decoration: none;
+  color: purple;
 }
 
 .logo span {
-    color: red;
-    font-weight: 800;
-    font-size: larger;
+  color: red;
+  font-weight: 800;
+  font-size: larger;
 }
 
 nav ul {
-    display: flex;
-    list-style: none;
+  display: flex;
+  list-style: none;
 }
 
 .nav-links {
-    padding-inline: 20px;
-    border-right: 2px solid purple;
+  padding-inline: 20px;
+  border-right: 2px solid purple;
 }
 
-li a {
-    text-decoration: none;
-    font-weight: 700;
-    color: purple;
-    transition: all 0.3s ease;
+.navbar li a {
+  text-decoration: none;
+  font-weight: 700;
+  color: purple;
+  transition: all 0.3s ease;
 }
 
 li a:hover {
-    color: red;
-    transform: scale(1.1);
+  color: red;
+  transform: scale(1.1);
 }
 
 .container {
-    padding: 2rem;
+  padding: 2rem;
 }
 
 .heading {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #fff;
-    text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
 }
 
 .book-collections {
-    display: none;
-}
-
-.book-collections.active {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
 .list {
-    border: 2px solid purple;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: #ffffff5a;
-    color: #fff;
-    margin-top: 2rem;
+  border: 2px solid purple;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff5a;
+  color: #fff;
+  margin-top: 2rem;
 }
 
 .list :nth-child(even) {
-    background-color: #eee;
-    margin-block: 0;
-    color: #000;
+  background-color: #eee;
+  margin-block: 0;
+  color: #000;
 }
 
 .books {
-    box-sizing: border-box;
-    padding: 0.5rem 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  box-sizing: border-box;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .remove {
-    background-color: purple !important;
-    padding: 0.7rem;
-    color: #fff !important;
-    border-radius: 0.3rem;
-    border: 1px solid white;
-    box-shadow: 50px 80px 90px rgba(0, 0, 0, 0);
-    cursor: pointer;
+  background-color: purple !important;
+  padding: 0.7rem;
+  color: #fff !important;
+  border-radius: 0.3rem;
+  border: 1px solid white;
+  box-shadow: 50px 80px 90px rgba(0, 0, 0, 0);
+  cursor: pointer;
 }
 
 .add-book {
-    display: none;
+  display: none;
 }
 
 .add-book.active {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
 .forms {
-    width: 50%;
+  width: 50%;
 }
 
 input[type=text] {
-    border: none;
-    outline: none;
-    width: 100%;
-    padding: 15px;
-    border-radius: 5px;
-    border: 1px solid purple;
+  font-size: 1.5rem;
+  outline: none;
+  width: 100%;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid purple;
 }
 
 #addBook {
-    float: right;
-    border: none;
-    outline: none;
-    padding: 15px;
-    border-radius: 5px;
-    border: 1px solid purple;
+  font-size: 1.5rem;
+  float: right;
+  outline: none;
+  padding: 15px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: purple;
+  border: 1px solid #fff;
+  cursor: pointer;
 }
 
 .contact-info {
-    display: none;
+  display: none;
 }
 
 .contact-info.active {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    color: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  color: #fff;
 }
 
 footer {
-    padding: 1rem 2rem;
-    margin-top: auto;
-    border: 2px solid purple;
-    font-size: 20px;
-    font-weight: bold;
-    background-color: #fff;
-    color: purple;
+  padding: 1rem 2rem;
+  margin-top: auto;
+  border: 2px solid purple;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #fff;
+  color: purple;
 }

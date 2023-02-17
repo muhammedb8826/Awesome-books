@@ -6,16 +6,20 @@ const bookCollections = document.getElementById('bookCollections');
 const addBooks = document.getElementById('AddBooks');
 const contactInfo = document.getElementById('contactInfo');
 
-
 listLink.addEventListener('click', () => {
-    // bookCollections.classList.toggle('active');
-    alert('hey');
-})
+  bookCollections.style.display = 'flex';
+  addBooks.classList.remove('active');
+  contactInfo.classList.remove('active');
+});
 
 addBookLink.addEventListener('click', () => {
-    // addBooks.classList.toggle('active');
+  addBooks.classList.toggle('active');
+  bookCollections.style.display = 'none';
+  contactInfo.classList.remove('active');
 });
 
 contactLink.addEventListener('click', () => {
-    // contactInfo..classList.toggle('active');
+  contactInfo.classList.toggle('active');
+  bookCollections.style.display = 'none';
+  addBooks.classList.remove('active');
 });
