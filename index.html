@@ -13,19 +13,21 @@
 
     <header class="header">
         <nav class="navbar">
-            <h1><a href="#">Awesome <span>Books</span></a></h1>
+            <h1 class="logo"><a href="#">Awesome <span>Books</span></a></h1>
             <ul>
                 <li class="nav-links">
-                    <a href="#" class="nav-item">List</a>
+                    <a href="#" class="nav-item" id="listLink">List</a>
                 </li>
                 <li class="nav-links">
-                    <a href="#" class="nav-item">Add new</a>
+                    <a href="#" class="nav-item" id="addBookLink">Add new</a>
                 </li>
                 <li class="nav-links">
-                    <a href="#" class="nav-item">Contact</a>
+                    <a href="#" class="nav-item" id="contactLink">Contact</a>
                 </li>
             </ul>
         </nav>
+
+        <div class="time"></div>
     </header>
 
     <main class="container">
@@ -47,26 +49,27 @@
                 <button type="submit" id="addBook">Add</button>
             </div>
         </section>
-<!-- 
+
         <section id="contactInfo" class="contact-info">
             <h1 class="heading">Contact information</h1>
             <p>
-                Do you have any questions, or jus want to say "Hello"? You can reach out to us!
+                Do you have any questions, or jus want to say "Hello"? <br> You can reach out to us!
             </p>
             <address>
-          <ul class="contact-list">
-            <li class="email">Our e-mail: mail@mail.com</li>
-            <li class="phone">Our phone number: 005554443210</li>
-            <li class="address">
-              Our address: Streetname 22, 87654 City, County
-            </li>
-          </ul>
-        </address>
-        </section> -->
+                <ul class="contact-list">
+                    <li class="email">Our e-mail: mail@mail.com</li>
+                    <li class="phone">Our phone number: 005554443210</li>
+                    <li class="address">
+                    Our address: Streetname 22, 87654 City, County
+                    </li>
+                </ul>
+            </address>
+        </section>
 
     </main>
     <footer>Copyright</footer>
     <script src="./book.js"></script>
+    <script src="./navigation.js"></script>
 </body>
 
 </html>

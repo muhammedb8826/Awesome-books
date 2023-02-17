@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -10,9 +9,10 @@
 body {
     min-height: 100vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: column;
     font-weight: normal;
+    overflow: hidden;
     background-image: url('/images/book.jpg');
 }
 
@@ -31,6 +31,18 @@ body {
     align-items: center;
 }
 
+.logo a {
+    font-weight: 600;
+    text-decoration: none;
+    color: purple;
+}
+
+.logo span {
+    color: red;
+    font-weight: 800;
+    font-size: larger;
+}
+
 nav ul {
     display: flex;
     list-style: none;
@@ -43,6 +55,14 @@ nav ul {
 
 li a {
     text-decoration: none;
+    font-weight: 700;
+    color: purple;
+    transition: all 0.3s ease;
+}
+
+li a:hover {
+    color: red;
+    transform: scale(1.1);
 }
 
 .container {
@@ -53,9 +73,14 @@ li a {
     font-size: 2rem;
     font-weight: 700;
     color: #fff;
+    text-align: center;
 }
 
 .book-collections {
+    display: none;
+}
+
+.book-collections.active {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -71,6 +96,7 @@ li a {
     flex-direction: column;
     background-color: #ffffff5a;
     color: #fff;
+    margin-top: 2rem;
 }
 
 .list :nth-child(even) {
@@ -98,6 +124,10 @@ li a {
 }
 
 .add-book {
+    display: none;
+}
+
+.add-book.active {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -129,19 +159,22 @@ input[type=text] {
 }
 
 .contact-info {
+    display: none;
+}
+
+.contact-info.active {
     display: flex;
     flex-direction: column;
     width: 100%;
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    color: #fff;
 }
-
-
 
 footer {
     padding: 1rem 2rem;
-    /* margin-top: 13rem; */
+    margin-top: auto;
     border: 2px solid purple;
     font-size: 20px;
     font-weight: bold;
