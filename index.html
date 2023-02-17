@@ -11,18 +11,18 @@
 
 <body>
 
-    <header>
+    <header class="header">
         <nav class="navbar">
-            <h1>Awesome <span>Books</span></h1>
+            <h1><a href="#">Awesome <span>Books</span></a></h1>
             <ul>
                 <li class="nav-links">
                     <a href="#" class="nav-item">List</a>
                 </li>
                 <li class="nav-links">
-                    <a href="#" class="nav-item">List</a>
+                    <a href="#" class="nav-item">Add new</a>
                 </li>
                 <li class="nav-links">
-                    <a href="#" class="nav-item">List</a>
+                    <a href="#" class="nav-item">Contact</a>
                 </li>
             </ul>
         </nav>
@@ -30,29 +30,26 @@
 
     <main class="container">
 
-        <section id="bookCollections">
-            <h1>Awesome Books</h1>
-            <div class="list"> </div>
+        <section id="bookCollections" class="book-collections">
+            <h1 class="heading">All Awesome Books</h1>
+            <div class="list"></div>
         </section>
 
-        <section id="AddBooks">
+        <section id="AddBooks" class="add-book">
 
-            <h1>Add a new Book</h1>
+            <h1 class="heading">Add a new Book</h1>
 
             <div class="forms">
-
-                <!-- <form action="#" id="form"> -->
                 <input type="text" name="book-title" id="bookTitle" placeholder="title">
                 <br><br>
                 <input type="text" name="author" id="bookAuthor" placeholder="author">
                 <br><br>
                 <button type="submit" id="addBook">Add</button>
-                <!-- </form> -->
             </div>
         </section>
-
-        <section id="contact-info">
-            <h1 class="title">Contact information</h1>
+<!-- 
+        <section id="contactInfo" class="contact-info">
+            <h1 class="heading">Contact information</h1>
             <p>
                 Do you have any questions, or jus want to say "Hello"? You can reach out to us!
             </p>
@@ -65,7 +62,7 @@
             </li>
           </ul>
         </address>
-        </section>
+        </section> -->
 
     </main>
     <footer>Copyright</footer>
