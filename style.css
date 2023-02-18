@@ -14,7 +14,7 @@ body {
   flex-direction: column;
   font-weight: normal;
   overflow: hidden;
-  background-image: url('/images/book.jpg');
+  background-image: url('./images/book.jpg');
 }
 
 .header {
