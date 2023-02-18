@@ -13,12 +13,13 @@ body {
   justify-content: center;
   flex-direction: column;
   font-weight: normal;
-  overflow: hidden;
   background-image: url('./images/book.jpg');
 }
 
 .header {
   display: flex;
+  position: fixed;
+  top: 0;
   flex-direction: column;
   width: 100%;
   padding: 1rem 2rem;
